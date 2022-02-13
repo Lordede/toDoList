@@ -1,0 +1,14 @@
+<app-head></app-head>
+
+<app-inputField (newToDoEvent)="addToDo($event)"></app-inputField>
+
+<h2>Offene Aufgaben:</h2>
+<ul>
+  <li *ngFor="let toDo of toDosOffen" class="offeneTodos">
+    <app-todo-offen [title]="toDo"></app-todo-offen>
+  </li>
+</ul>
+
+<h2>Erledigte Aufgaben:</h2>
+
+<app-todo-erledigt></app-todo-erledigt>

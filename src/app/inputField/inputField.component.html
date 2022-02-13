@@ -1,0 +1,7 @@
+<div id="container">
+  <form class="form">
+    <label for="finput">Aufgabe:</label><br>
+    <input type="text" id="finput" name="finput" #newToDo><br>
+    <button type="button" (click)="addNewToDo(newToDo.value)">Hinzufügen</button>
+  </form>
+</div>
