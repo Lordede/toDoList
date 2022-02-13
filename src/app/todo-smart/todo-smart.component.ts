@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoSmartComponent implements OnInit {
   toDosOffen: string[] = [];
+  toDosErledigt: string[] = [];
 
   constructor() { }
 
@@ -15,7 +16,20 @@ export class TodoSmartComponent implements OnInit {
 
   addToDo(newToDo: string){
     this.toDosOffen.push(newToDo);
-    console.log(newToDo);
+  }
+
+  moveToDoToErledigt(toDo: string){
+     let pos = this.toDosOffen.indexOf(toDo);
+     this.toDosOffen.splice(pos, 1);
+
+     this.toDosErledigt.push(toDo);
+  }
+
+  moveToDoToOffen(toDo: string){
+    let pos = this.toDosErledigt.indexOf(toDo);
+    this.toDosErledigt.splice(pos, 1);
+
+    this.toDosOffen.push(toDo);
   }
 
 }

@@ -5,10 +5,15 @@
 <h2>Offene Aufgaben:</h2>
 <ul>
   <li *ngFor="let toDo of toDosOffen" class="offeneTodos">
-    <app-todo-offen [title]="toDo"></app-todo-offen>
+    <app-todo-offen [title]="toDo" (toDoDoneEvent)="moveToDoToErledigt($event)"></app-todo-offen>
   </li>
 </ul>
 
 <h2>Erledigte Aufgaben:</h2>
+<ul>
+  <li *ngFor="let toDo of toDosErledigt" class="erledigteTodos">
+    <app-todo-erledigt [title]="toDo" (toDoReOpenEvent)="moveToDoToOffen($event)"></app-todo-erledigt>
+  </li>
+</ul>
 
-<app-todo-erledigt></app-todo-erledigt>
+<!-- <app-todo-erledigt id="hallo"></app-todo-erledigt> -->
